@@ -1,0 +1,55 @@
+START TeamVibesMatcher
+
+1. Initialize variables:
+    - teamMembersList ← empty list
+    - personalityMap ← dictionary (maps personality traits to descriptions)
+    - compatibilityScores ← dictionary (maps team pairs to scores)
+
+2. Display welcome message and instructions.
+
+3. REPEAT until user chooses "Exit":
+    a. Display main menu:
+        i. Add a Team Member
+        ii. View Team Members
+        iii. Calculate Compatibility
+        iv. Exit
+
+    b. IF user selects "Add a Team Member":
+        i. Prompt user for:
+            - Name
+            - Strengths
+            - Weaknesses
+            - Preferred Work Style
+        ii. Validate input:
+            - Ensure all fields are filled.
+        iii. Append the new team member to teamMembersList.
+
+    c. ELSE IF user selects "View Team Members":
+        i. Display all team members:
+            FOR each member in teamMembersList:
+                Print:
+                    - Name
+                    - Strengths, Weaknesses
+                    - Preferred Work Style
+        ii. IF teamMembersList is empty:
+            Print "No team members added yet."
+
+    d. ELSE IF user selects "Calculate Compatibility":
+        i. Check if teamMembersList has at least two members.
+            - IF not, prompt user to add more members.
+        ii. FOR each pair of team members:
+            - Compare traits (e.g., strengths and weaknesses).
+            - Assign compatibility score using predefined rules:
+                Example: Higher overlap in strengths = Higher score.
+            - Store pair and score in compatibilityScores.
+        iii. Display results:
+            FOR each pair in compatibilityScores:
+                Print pair and their compatibility score.
+
+    e. ELSE IF user selects "Exit":
+        Print "Thank you for using Team Vibes Matcher. Goodbye!"
+        BREAK.
+
+4. END REPEAT
+
+5. END TeamVibesMatcher
